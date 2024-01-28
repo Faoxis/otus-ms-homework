@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otus-ms-hw
+  labels:
+    app: otus-ms-hw
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: otus-ms-hw
+  template:
+    metadata:
+      labels:
+        app: otus-ms-hw
+    spec:
+      containers:
+        - name: otus-ms-hw
+          image: faoxis/otus-ms:hw3
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /health/
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 3
+
