@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: otus-health-app
+  datasource:
+    url: jdbc:postgresql://${DATASOURCE_HOST:localhost}:5444/otus
+    username: postgres
+    password: postgres
