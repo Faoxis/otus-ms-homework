@@ -2,6 +2,17 @@ spring:
   application:
     name: otus-health-app
   datasource:
-    url: jdbc:postgresql://${DATASOURCE_HOST:localhost}:5444/otus
-    username: postgres
-    password: postgres
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5444/otus}
+    username: ${DATASOURCE_USERNAME:postgres}
+    password: ${DATASOURCE_PASSWORD:postgres}
+
+springdoc:
+  show-actuator: true
+  use-management-port: true
+management:
+  server:
+    port: 9090
+  endpoints:
+    web:
+      exposure:
+        include: openapi, swagger-ui

@@ -9,10 +9,11 @@ helm install nginx ingress-nginx/ingress-nginx --namespace m -f nginx-ingress.ya
 
 kubectl apply -f kuber/Deployment.yml
 kubectl apply -f kuber/Service.yml
-sleep 60
-kubectl apply -f kuber/Ingress.yml
+sleep 30
+kubectl apply -f kuber
 
-kubectl apply -f pg
+
+helm install pg oci://registry-1.docker.io/bitnamicharts/postgresql -f pg/values.yml
 
 minikube ip
 kubectl get pods -w

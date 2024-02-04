@@ -5,7 +5,7 @@ metadata:
   labels:
     app: otus-ms-hw
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: otus-ms-hw
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: otus-ms-hw
-          image: faoxis/otus-ms:hw3
+          image: faoxis/otus-ms:hw4.6
           ports:
             - containerPort: 8080
           livenessProbe:
@@ -25,4 +25,9 @@ spec:
               port: 8080
             initialDelaySeconds: 3
             periodSeconds: 3
+          envFrom:
+            - configMapRef:
+                name: otus-ms-configmap
+            - secretRef:
+                name: otus-ms-secret
 

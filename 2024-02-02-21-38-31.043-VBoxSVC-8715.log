@@ -1,0 +1,7 @@
+Log created: 2024-02-02T21:38:31.433826000Z
+Process ID:  8715 (0x220b)
+Parent PID:  3661 (0xe4d)
+Executable:  /usr/lib/virtualbox/VBoxSVC
+Arg[0]: /usr/lib/virtualbox/VBoxSVC
+Arg[1]: --auto-shutdown
+AddRef: illegal refcnt=3221225469 state=2
